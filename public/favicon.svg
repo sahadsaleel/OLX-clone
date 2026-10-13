@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="24" fill="#002f34"/>
+  <!-- O in OLX Teal/Cyan -->
+  <circle cx="28" cy="50" r="14" fill="none" stroke="#23e5db" stroke-width="8"/>
+  <!-- L in OLX Yellow -->
+  <path d="M47 36 V64 H60" fill="none" stroke="#ffce32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- X in Clean White -->
+  <path d="M68 36 L86 64 M86 36 L68 64" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+</svg>

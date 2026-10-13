@@ -1,0 +1,67 @@
+/* Wishlist Page Layout */
+.wishlist-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8f9;
+}
+
+.wishlist-content {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 16px 50px;
+  flex: 1;
+}
+
+.wishlist-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 24px;
+}
+
+/* Empty State Card */
+.empty-wishlist-box {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 8px;
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-wishlist-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 8px;
+}
+
+.empty-wishlist-box p {
+  font-size: 14px;
+  color: rgba(0, 47, 52, 0.64);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #002f34;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.explore-btn:hover {
+  background-color: #00464f;
+}

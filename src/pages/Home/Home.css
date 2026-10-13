@@ -1,0 +1,107 @@
+/* Home Page Layout */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8f9;
+}
+
+.home-content {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  flex: 1;
+}
+
+/* Hero / Welcome Banner */
+.home-banner {
+  background: linear-gradient(135deg, #002f34 0%, #00464f 100%);
+  border-radius: 8px;
+  padding: 36px 30px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 14px rgba(0, 47, 52, 0.15);
+}
+
+.banner-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.banner-text p {
+  font-size: 16px;
+  color: #cdd6d8;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #002f34;
+  margin-bottom: 20px;
+}
+
+/* Responsive Grid for Product Cards */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Load More Button Wrapper */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.load-more-btn {
+  padding: 12px 30px;
+  background-color: #ffffff;
+  color: #002f34;
+  border: 2px solid #002f34;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #002f34;
+  color: #ffffff;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 1100px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .home-banner {
+    padding: 24px 20px;
+  }
+
+  .banner-text h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

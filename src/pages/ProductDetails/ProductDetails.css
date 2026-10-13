@@ -1,0 +1,301 @@
+/* Product Details Page Layout */
+.product-details-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f4f5;
+}
+
+.product-details-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px 50px;
+  flex: 1;
+}
+
+/* Breadcrumb */
+.product-breadcrumb {
+  font-size: 13px;
+  color: rgba(0, 47, 52, 0.64);
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-breadcrumb a {
+  color: #002f34;
+  font-weight: 600;
+}
+
+.product-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Grid Layout */
+.product-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+/* Left Column */
+.product-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-image-card {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.product-detail-img {
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.product-description-card {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.product-description-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 12px;
+}
+
+.description-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0, 47, 52, 0.85);
+  white-space: pre-line;
+}
+
+/* Right Column */
+.product-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Price & Title Card */
+.detail-price-card {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.detail-price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #002f34;
+}
+
+.detail-wishlist-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f7f8f9;
+  border: 1px solid #ccd5d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detail-wishlist-btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.detail-wishlist-btn .heart-icon {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.detail-wishlist-btn.active {
+  background-color: #ffeded;
+  border-color: #ff3f55;
+}
+
+.detail-wishlist-btn.active .heart-icon.filled {
+  animation: heartPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPop {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #002f34;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.detail-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(0, 47, 52, 0.64);
+  padding-top: 12px;
+  border-top: 1px solid #ebeeef;
+}
+
+/* Seller Card */
+.detail-seller-card {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.detail-seller-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 16px;
+}
+
+.seller-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.seller-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #002f34;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002f34;
+  text-transform: capitalize;
+}
+
+.seller-badge {
+  font-size: 12px;
+  color: rgba(0, 47, 52, 0.54);
+}
+
+.contact-seller-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #002f34;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.contact-seller-btn:hover {
+  background-color: #00464f;
+}
+
+.seller-contact-revealed {
+  background-color: #f2f7f7;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px dashed #002f34;
+  font-size: 14px;
+  color: #002f34;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Safety Card */
+.detail-safety-card {
+  background-color: #ffffff;
+  border: 1px solid #ccd5d6;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.detail-safety-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 10px;
+}
+
+.detail-safety-card ul {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 47, 52, 0.7);
+  line-height: 1.6;
+}
+
+/* Loading & Error States */
+.product-loading-container,
+.product-error-container {
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ccd5d6;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #002f34;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .product-main-grid {
+    grid-template-columns: 1fr;
+  }
+}

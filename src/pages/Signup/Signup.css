@@ -1,0 +1,142 @@
+/* Full page centered container */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f4f5;
+  padding: 20px;
+}
+
+/* Card Wrapper */
+.auth-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 32px;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 47, 52, 0.12);
+  text-align: center;
+}
+
+.auth-logo img {
+  height: 48px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.auth-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #002f34;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: rgba(0, 47, 52, 0.64);
+  margin-bottom: 24px;
+}
+
+/* Error Alert */
+.auth-error-alert {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-left: 4px solid #c62828;
+  text-align: left;
+}
+
+/* Form inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #002f34;
+}
+
+.form-group input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccd5d6;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #002f34;
+  box-shadow: 0 0 0 2px rgba(0, 47, 52, 0.1);
+}
+
+/* Submit button */
+.auth-submit-btn {
+  margin-top: 8px;
+  padding: 14px;
+  background-color: #002f34;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background-color: #00464f;
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Footer Link */
+.auth-footer-link {
+  margin-top: 24px;
+  font-size: 14px;
+  color: rgba(0, 47, 52, 0.7);
+}
+
+.auth-footer-link a {
+  color: #002f34;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.auth-footer-link a:hover {
+  text-decoration: none;
+}
+
+/* Inline Validation Styles */
+.form-group input.input-error {
+  border-color: #c62828;
+  background-color: #fffafb;
+}
+
+.field-error-msg {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c62828;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
