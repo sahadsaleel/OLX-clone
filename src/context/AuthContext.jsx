@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
-  signOut, 
-  onAuthStateChanged 
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
 } from 'firebase/auth'
 import { auth } from '../firebase/firebase'
 
@@ -14,7 +14,6 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  // Read saved session from localStorage on initial load
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const savedUser = localStorage.getItem('olx_session_user')
