@@ -14,7 +14,15 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null)
+  // Read saved session from localStorage on initial load
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const savedUser = localStorage.getItem('olx_session_user')
+      return savedUser ? JSON.parse(savedUser) : null
+    } catch {
+      return null
+    }
+  })
   const [loading, setLoading] = useState(true)
 
   function signup(email, password) {
@@ -26,13 +34,28 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
+    localStorage.removeItem('olx_session_user')
     return signOut(auth)
   }
 
+  // Monitor user session state across refreshes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user)
-      setLoading(false) 
+      if (user) {
+        // Save session in localStorage for immediate access
+        localStorage.setItem(
+          'olx_session_user',
+          JSON.stringify({
+            uid: user.uid,
+            email: user.email
+          })
+        )
+        setCurrentUser(user)
+      } else {
+        localStorage.removeItem('olx_session_user')
+        setCurrentUser(null)
+      }
+      setLoading(false)
     })
 
     return unsubscribe
@@ -40,6 +63,8 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    loading,
+    isAuthenticated: Boolean(currentUser),
     signup,
     login,
     logout
@@ -47,7 +72,15 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
+      {loading ? (
+        <div className="session-loading-screen">
+          <div className="session-spinner"></div>
+          <p>Loading session...</p>
+        </div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   )
 }
+

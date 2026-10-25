@@ -84,6 +84,44 @@
   box-shadow: 0 0 0 2px rgba(0, 47, 52, 0.1);
 }
 
+/* Password input with eye toggle */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #002f34;
+  opacity: 0.6;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-password-btn:hover {
+  opacity: 1;
+}
+
+.toggle-password-btn:focus-visible {
+  outline: 2px solid #002f34;
+}
+
+
 /* Submit button */
 .auth-submit-btn {
   margin-top: 8px;

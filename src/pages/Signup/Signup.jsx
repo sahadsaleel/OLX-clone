@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import logo from '../../assets/symbol.png'
@@ -10,6 +10,8 @@ function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [generalError, setGeneralError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -17,8 +19,15 @@ function Signup() {
   const [errors, setErrors] = useState({})
   const [touched, setTouched] = useState({})
 
-  const { signup } = useAuth()
+  const { currentUser, signup } = useAuth()
   const navigate = useNavigate()
+
+  // Redirect to home if user already has an active session
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/', { replace: true })
+    }
+  }, [currentUser, navigate])
 
   // Validate single field
   function validateField(fieldName, value, currentPassword = password) {

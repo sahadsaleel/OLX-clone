@@ -1,0 +1,33 @@
+/* Session loading screen styles */
+.session-loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: #f7f8f9;
+  color: #002f34;
+  font-family: inherit;
+}
+
+.session-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 47, 52, 0.15);
+  border-top-color: #002f34;
+  border-radius: 50%;
+  animation: sessionSpin 0.8s linear infinite;
+}
+
+.session-loading-screen p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #002f34;
+}
+
+@keyframes sessionSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
